@@ -34,6 +34,14 @@
                         <div class="col-6">
                             <h3>Bukti Pembayaran</h3>
                             <img src="<?= base_url('uploads/'.$transaksi['foto']); ?>" alt="" width="400px">
+                            <?php if($this->session->userdata("Customer")){ ?>
+                                <form action=""  method="post" enctype="multipart/form-data">
+									<input type="file" class="mt-2 " name="foto">
+									<input type="hidden" value="<?= $transaksi['id']; ?>" name="id">
+									<button type="submit"  class="btn btn-primary mt-2">Upload</button>
+								</form>
+                           <?php } ?>
+                           
                         </div>
                     </div>
                     <div class="table-responsive">
@@ -47,7 +55,9 @@
                                     <th>Nama</th>
                                     <th>Jumlah</th>
                                     <th>Harga Jual</th>
+                                    <?php if($this->session->userdata("role")!="Customer"){ ?>
                                     <th>Harga Beli</th>
+                                    <?php } ?>
                                     <th>Subtotal Belanja</th>
                                 </tr>
                             </thead>
@@ -63,7 +73,9 @@
                                     <td><?= $row->nama; ?></td>
                                     <td><?= $row->jumlah; ?></td>
                                     <td>Rp. <?= number_format($row->harga,0,',','.'); ?></td>
+                                    <?php if($this->session->userdata("role")!="Customer"){ ?>
                                     <td>Rp. <?= number_format($row->harga_beli,0,',','.'); ?></td>
+                                    <?php } ?>
                                     <td>Rp. <?= number_format($total,0,',','.'); ?></td>
                                 </tr>
                                 <?php } ?>

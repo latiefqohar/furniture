@@ -37,15 +37,6 @@
 							<?php } ?>
 
 						</tbody>
-						<tfoot>
-							<tr>
-								<th>Produk</th>
-								<th>deskripsi</th>
-								<th>Harga</th>
-								<th>Gambar</th>
-								<th>Action</th>
-							</tr>
-						</tfoot>
 					</table>
 				</div>
 				<!-- /.card-body -->

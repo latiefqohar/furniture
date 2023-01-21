@@ -4,7 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Model_depan extends CI_Model {
 
     public function tampil_keranjang(){
-        return $this->db->select('a.*,b.nama,b.deskripsi,b.harga_beli,b.harga,b.foto')->from('keranjang a')->join('menu b','a.id_menu=b.id')->where('status_bayar',0)->get()->result();
+        $user_id = $this->session->userdata("id");
+        return $this->db->select('a.*,b.nama,b.deskripsi,b.harga_beli,b.harga,b.foto')->from('keranjang a')->join('menu b','a.id_menu=b.id')->where('status_bayar',0)->where('user_id',$user_id )->get()->result();
     }
 
     public function update_keranjang($id){

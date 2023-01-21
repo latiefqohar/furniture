@@ -37,6 +37,26 @@ class Transaksi extends CI_Controller {
     }
 
     public function detail($id){
+        if (isset($_POST['id'])) {
+            $config['upload_path'] = './uploads/';
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            $config['max_size']  = '1024';
+            $config['overwrite'] = true;
+
+            $this->load->library('upload', $config);
+
+            if(!empty($_FILES['foto']['name'])){
+                echo "cek1";
+                if(!$this->upload->do_upload('foto')){
+                   echo $this->upload->display_errors();  
+                   echo 'gagal';
+                }else{
+                    $data_upload =  $this->upload->data();
+                    $foto['foto'] = $data_upload['file_name'];            
+                    $this->Crud->update_data(['id'=>$this->input->post('id')],['foto'=>$foto['foto']],'transaksi');
+                }
+            }
+        }
         $data['transaksi'] = $this->Crud->edit_data(['id'=>$id],'transaksi')->row_array();
         $data['detail'] = $this->Model_admin->data_transaksi($data['transaksi']['id']);
         $this->load->view('admin/v_header');

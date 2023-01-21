@@ -146,8 +146,7 @@
 						</li>
             <?php $role = $this->session->userdata("role"); ?>
             <?php if ($role == "Admin") { ?>
-              # code...
-            
+
 						<li class="nav-item has-treeview ">
 							<a href="#" class="nav-link">
 								<i class="nav-icon fas fa-database"></i>
@@ -271,6 +270,24 @@
 								</li>
 							</ul>
 						</li>
+            <?php }elseif ($role == "Customer") { ?>
+            <li class="nav-item has-treeview">
+							<a href="<?= base_url('admin/profile'); ?>" class="nav-link">
+								<i class="nav-icon fas fa-users"></i>
+								<p>
+									Profile
+								</p>
+							</a>
+						</li>
+            <li class="nav-item has-treeview">
+							<a href="<?= base_url('/'); ?>" class="nav-link">
+								<i class="nav-icon fas fa-shopping-cart"></i>
+								<p>
+									Belanja
+								</p>
+							</a>
+						</li>
+						
             <?php } ?>
 						<!-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">

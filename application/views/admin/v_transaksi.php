@@ -29,8 +29,10 @@
                                     <th>Alamat</th>
                                     <th>No Telpon</th>
                                     <th>Total</th>
+                                    <?php if($this->session->userdata("role")!="Customer"){ ?>
                                     <th>Total Beli</th>
                                     <th>Laba</th>
+                                    <?php } ?>
                                     <th>Jenis Pembayaran</th>
                                     <th>Tanggal Pemesanan</th>
                                     <th>Status Pembayaran</th>
@@ -66,9 +68,11 @@
                                     <td><?= $row->nama; ?></td>
                                     <td><?= $row->alamat; ?></td>
                                     <td><?= $row->telpon; ?></td>
-                                    <td><?= $row->total; ?></td>
+                                    <td><?= $row->total.$this->session->userdata("role"); ?></td>
+                                    <?php if($this->session->userdata("role")!="Customer"){ ?>
                                     <td><?= $row->subtotal_beli; ?></td>
                                     <td><?= $row->total-$row->subtotal_beli; ?></td>
+                                    <?php } ?>
                                     <td><?= $row->pembayaran; ?></td>
                                     <td><?= $row->waktu; ?></td>
                                     <td><?= $bayar; ?></td>

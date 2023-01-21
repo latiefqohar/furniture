@@ -85,12 +85,12 @@
 							<input type="text" name="kupon" class="form-control text-left px-3" placeholder="" required>
 						</div>
 				</div>
-				<p><button class="btn btn-primary py-3 px-4">Pakai Kupon</a></p>
+				<p><button class="btn btn-primary py-3 px-4">Pakai Kupon</button></p>
 				</form>
 			</div>
 
 			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-				<div class="cart-total mb-3">
+				<!-- <div class="cart-total mb-3">
 					<h3>Estimate shipping and tax</h3>
 					<p>Enter your destination to get a shipping estimate</p>
 					<form action="<?= base_url('Keranjang/estimasi_ongkir'); ?>" method="post">
@@ -107,7 +107,7 @@
 							<input type="text" class="form-control text-left px-3" placeholder="" required>
 						</div>
 				</div>
-				<p><button class="btn btn-primary py-3 px-4">Estimate</button></p>
+				<p><button class="btn btn-primary py-3 px-4">Estimate</button></p> -->
 			</div>
 			</form>
 			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">

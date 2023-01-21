@@ -19,41 +19,41 @@
 						
 						<div class="col-md-12">
 							<div class="form-group">
-								<label for="nama_depan">Nama Depan</label>
-								<input type="text" name="nama_depan" id="nama_depan" class="form-control" placeholder="" required>
+								<label for="nama_depan">Nama</label>
+								<input type="text" name="nama_depan" id="nama_depan" class="form-control" placeholder="" value="<?=  $user['nama'] ; ?>" required>
 							</div>
 						</div>
 						<div class="w-100"></div>
 						<div class="col-md-12">
 							<div class="form-group">
 								<label for="alamat">Alamat</label>
-								<input type="text" name="alamat" id="alamat" class="form-control" placeholder="" required>
+								<input type="text" name="alamat" id="alamat" class="form-control" placeholder="" value="<?=  $user['alamat'] ; ?>" required>
 							</div>
 						</div>
 						<div class="w-100"></div>
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="kota">Kota</label>
-								<input type="text" name="kota" id="kota" class="form-control" placeholder="" required>
+								<input type="text" name="kota" id="kota" class="form-control" value="<?=  $user['kota'] ; ?>" placeholder="" required>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="kode_pos">Kode Pos</label>
-								<input type="text" name="kode_pos" id="kode_pos" class="form-control" placeholder="" required>
+								<input type="text" name="kode_pos" id="kode_pos" class="form-control" placeholder=""  required>
 							</div>
 						</div>
 						<div class="w-100"></div>
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="telpon">Telpon</label>
-								<input type="text" name="telpon" id="telpon" class="form-control" placeholder="" required>
+								<input type="text" name="telpon" id="telpon" class="form-control" placeholder="" value="<?=  $user['no_telepon'] ; ?>" required>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="email">Email Address</label>
-								<input type="email" name="email" id="email" class="form-control" placeholder="" required>
+								<input type="email" name="email" id="email" class="form-control" placeholder="" value="<?=  $user['email'] ; ?>" required>
 							</div>
 						</div>
 						<div class="w-100"></div>

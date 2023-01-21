@@ -30,11 +30,11 @@
     <div class="card-body login-card-body">
     <?= $this->session->flashdata('message'); ?>
     <img src="<?= base_url('assets/arrum_logo.png'); ?>" alt="Logo"  style="display: block;margin-left: auto;margin-right: auto;width: 50%;">
-      <p class="login-box-msg">Silahkan Login Untuk Management Data</p>
+      <p class="login-box-msg">Silahkan masukkan data untuk proses pendaftaran</p>
 
-      <form action="<?= base_url('Auth/prosesLogin'); ?>" method="post">
+      <form action="<?= base_url('Auth/register_process'); ?>" method="post">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" name="username" placeholder="Username">
+          <input type="text" class="form-control" name="nama" placeholder="Nama" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-users"></span>
@@ -42,7 +42,47 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" name="password" placeholder="Password">
+          <input type="number" class="form-control" name="no_telepon" placeholder="No Telepon" required>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-phone"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="email" class="form-control" name="email" placeholder="Email" required>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-at"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" name="alamat" placeholder="Alamat" required>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-location-arrow"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" name="kota" placeholder="Kota" required>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-location-arrow"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" name="username" placeholder="Username" required>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-users"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" name="password" placeholder="Password" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -52,7 +92,6 @@
         <div class="row">
           <div class="col-12">
             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-            <p>Belum memiliki akun? <a href="<?= base_url("auth/register"); ?>">Registrasi Sekarang</a></p>
           </div>
           <!-- /.col -->
         </div>

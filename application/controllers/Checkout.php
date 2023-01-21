@@ -7,6 +7,7 @@ class Checkout extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('Model_depan');
+        $this->load->model('Crud','crud');
     }
     
 
@@ -23,6 +24,8 @@ class Checkout extends CI_Controller {
             $data['keranjang']['diskon'] =0; 
         }
         $data['total'] =  $data['subtotal']['jumlah']+$data['keranjang']['ongkir']-$data['keranjang']['diskon'];
+        $user_id = $this->session->userdata("id");
+        $data['user'] = $this->crud->edit_data(['id'=>$user_id],'registration')->row_array();
         $this->load->view('v_header');
         $this->load->view('v_checkout',$data);
         $this->load->view('v_footer');
@@ -63,7 +66,8 @@ class Checkout extends CI_Controller {
             'diskon'=>$diskon,
             'total'=>$total,
             'pembayaran'=>$pembayaran,
-            'waktu'=>date('Y-m-d H:i:s')
+            'waktu'=>date('Y-m-d H:i:s'),
+            'user_id'=>$this->session->userdata("id")
 
         );
         $this->Crud->insert_data($data,'transaksi');

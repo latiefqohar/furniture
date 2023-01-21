@@ -66,7 +66,8 @@
 			</button>
             <!-- itung keranjang -->
             <?php 
-            $data=$this->db->query('select sum(jumlah) as total from keranjang where status_bayar=0')->row_array();
+			$user_id = $this->session->userdata('id');
+            $data=$this->db->query('select sum(jumlah) as total from keranjang where status_bayar=0 and user_id='.$user_id)->row_array();
             ?>
             <!-- end itung -->
 			<div class="collapse navbar-collapse" id="ftco-nav">
@@ -75,7 +76,11 @@
 					<li class="nav-item"><a href="<?= base_url('Belanja'); ?>" class="nav-link">Produk Kami</a></li>
 					<li class="nav-item"><a href="<?= base_url('Status'); ?>" class="nav-link">Cek Status &amp; konfirmasi</a></li>
 					<li class="nav-item active"><a href="<?= base_url('About'); ?>" class="nav-link">Tentang</a></li>
+					<?php if($this->session->userdata("login") ==1){ ?>
+					<li class="nav-item active"><a href="<?= base_url('admin/dashboard'); ?>" class="nav-link">Dashboard</a></li>
+					<?php }else{ ?>
 					<li class="nav-item active"><a href="<?= base_url('Auth'); ?>" class="nav-link">Login</a></li>
+					<?php } ?>
 					<!-- <li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false">Shop</a>
