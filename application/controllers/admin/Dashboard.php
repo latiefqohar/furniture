@@ -16,8 +16,6 @@ class Dashboard extends CI_Controller {
         $data['menunggu_proses']=$this->Crud->edit_data(['pembayaran'=>'transfer','foto !='=>"",'status'=>0],'transaksi')->num_rows();
         $data['sedang_diproses']=$this->Crud->edit_data(['status'=>2],'transaksi')->num_rows();
         $data['selesai']=$this->Crud->edit_data(['status'=>3],'transaksi')->num_rows();
-        $data['invoice_pending']=$this->Crud->edit_data(['status_invoice'=>0],'invoice')->num_rows();
-        $data['invoice_selesai']=$this->Crud->edit_data(['status_invoice'=>1],'invoice')->num_rows();
         $before = date('Y-m-d', strtotime('-8 days', strtotime( date("Y-m-d") )));
         $data['tanggal'] =  $this->db->query("select sum(total) as total, CAST(waktu AS DATE) as waktu from transaksi where waktu >'".$before."' and status_bayar=1 group by DATE(waktu)")->result();
 
