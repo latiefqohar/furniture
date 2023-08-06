@@ -21,7 +21,7 @@
                     <br>
                    
                     <div class="table-responsive">
-                        <table id="example1" class="table table-bordered table-striped" style="font-size:10pt">
+                        <table class="table table-bordered table-striped" style="font-size:10pt">
                             <thead>
                                 <tr>
                                     <th>Waktu</th>
@@ -29,13 +29,19 @@
                                     <th>Jumlah</th>
                                     <th>Harga Beli</th>
                                     <th>Harga Jual</th>
+                                    <th>Diskon</th>
                                     <th>Laba</th>
                                     <th>Jenis Pembayaran</th>
                                    
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($transaksi as $row) { ?>
+                                <?php 
+                                $total_jual = 0;
+                                $total_beli = 0;
+                                $total_untung = 0;
+                                $total_diskon = 0;
+                                foreach ($transaksi as $row) { ?>
 
                                 <tr>
                                     <td><?= $row->waktu; ?></td>
@@ -43,10 +49,25 @@
                                     <td><?= $row->jumlah; ?></td>
                                     <td><?= $row->harga_beli; ?></td>
                                     <td><?= $row->harga_jual; ?></td>
+                                    <td><?= $row->diskon; ?></td>
                                     <td><?= $row->untung; ?></td>
                                     <td><?= $row->pembayaran; ?></td>
                                 </tr>
-                                <?php } ?>
+                                <?php 
+                                $total_beli += $row->harga_beli;
+                                $total_jual += $row->harga_jual;
+                                $total_untung += $row->untung;
+                                $total_diskon += $row->diskon;
+                                } ?>
+                                <tr>
+                                    <th colspan="3">Total</th>
+                                    <th><?= $total_beli; ?></th>
+                                    <th><?= $total_jual; ?></th>
+                                    <th><?= $total_diskon; ?></th>
+                                    <th><?= $total_untung; ?></th>
+                                    <th></th>
+                                   
+                                </tr>
 
                             </tbody>
                            
