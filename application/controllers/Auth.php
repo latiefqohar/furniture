@@ -81,7 +81,7 @@ class Auth extends CI_Controller {
     }
 
     public function logout(){
-        $array_items = array('login', 'user');
+        $array_items = array('login', 'user', 'id');
         $this->session->unset_userdata($array_items);
         $this->session->set_flashdata('message', ' <div class="alert alert-info alert-dismissible">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

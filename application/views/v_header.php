@@ -67,7 +67,13 @@
             <!-- itung keranjang -->
             <?php 
 			$user_id = $this->session->userdata('id');
-            $data=$this->db->query('select sum(jumlah) as total from keranjang where status_bayar=0 and user_id='.$user_id)->row_array();
+			// var_dump($user_id);die();
+			if ($user_id) {
+				$data=$this->db->query('select sum(jumlah) as total from keranjang where status_bayar=0 and user_id='.$user_id)->row_array();
+			}else{
+				$data['total'] = 0;
+			}
+            
             ?>
             <!-- end itung -->
 			<div class="collapse navbar-collapse" id="ftco-nav">
