@@ -95,6 +95,11 @@ class Checkout extends CI_Controller {
         
     }
 
+    public function terima($id){
+        $this->crud->update_data(['id'=>$id],['status'=>4, 'waktu'=>date('Y-m-d H:i:s')],'transaksi');
+        redirect('Checkout/detail/'.$id,'refresh');
+    }
+
 }
 
 /* End of file Checkout.php */

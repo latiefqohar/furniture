@@ -204,6 +204,12 @@
 										<p>Menunggu dikirim</p>
 									</a>
 								</li>
+                <li class="nav-item">
+									<a href="<?= base_url('admin/Transaksi/dikirim'); ?>" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Dikirim</p>
+									</a>
+								</li>
 								<li class="nav-item">
 									<a href="<?= base_url('admin/Transaksi/selesai'); ?>" class="nav-link">
 										<i class="far fa-circle nav-icon"></i>
@@ -211,6 +217,14 @@
 									</a>
 								</li>
 							</ul>
+						</li>
+            <li class="nav-item ">
+							<a href="<?= base_url('admin/Laporan'); ?>" class="nav-link">
+								<i class="nav-icon fas fa-file-pdf"></i>
+								<p>
+									Laporan
+								</p>
+							</a>
 						</li>
 						<!-- <li class="nav-item has-treeview">
 							<a href="#" class="nav-link">
@@ -287,7 +301,14 @@
 								</p>
 							</a>
 						</li>
-						
+						<li class="nav-item ">
+							<a href="<?= base_url('admin/Laporan'); ?>" class="nav-link">
+								<i class="nav-icon fas fa-file-pdf"></i>
+								<p>
+									Laporan
+								</p>
+							</a>
+						</li>
             <?php } ?>
 						<!-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">

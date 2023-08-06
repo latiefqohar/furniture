@@ -87,6 +87,8 @@
 								Sedang di proses
 							<?php } elseif($transaksi['status']==3){ ?> 
 								Dikirim <?= $transaksi['waktu']; ?>
+							 <?php } elseif($transaksi['status']==4){ ?> 
+								Diterima <?= $transaksi['waktu']; ?>
 							 <?php } ?>
 							</div>
 							<hr>
@@ -105,12 +107,13 @@
 									<button type="submit"  class="btn btn-primary mt-2">Upload</button>
 								</form>
 								<?php } 
-							}else{
+							 }else{
 								echo $invoice;
 							} ?>
-							 
-								
-							
+							<?php if ($transaksi['status'] == 3) { ?>
+								<br><br>
+							 	<a href="<?= base_url('Checkout/terima/'.$transaksi['id']); ?>" class="btn btn-success">Konfirmasi pesanan diterima</a>
+							<?php } ?>
 							 
 						</div>
                     </div>

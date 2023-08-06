@@ -158,7 +158,7 @@ class Transaksi extends CI_Controller {
         redirect('admin/Transaksi/kirim','refresh');
     }
 
-    public function selesai(){
+    public function dikirim(){
         if ($this->session->userdata('login')!=1) {
             $this->session->set_flashdata('message', ' <div class="alert alert-danger alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -171,6 +171,21 @@ class Transaksi extends CI_Controller {
         $this->load->view('admin/v_transaksiSelesai',$data);
         $this->load->view('admin/v_footer');
     }
+
+    public function selesai(){
+        if ($this->session->userdata('login')!=1) {
+            $this->session->set_flashdata('message', ' <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <i class="icon fas fa-info"></i> Anda Belom Login
+            </div>');
+            redirect('Auth','refresh');
+        }
+        $data['transaksi'] = $this->Crud->edit_data(['status'=>4],'transaksi')->result();
+        $this->load->view('admin/v_header');
+        $this->load->view('admin/v_transaksiSelesai',$data);
+        $this->load->view('admin/v_footer');
+    }
+
 
 }
 

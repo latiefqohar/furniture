@@ -52,6 +52,7 @@
         <div class="row">
           <div class="col-12">
             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <a href="<?= base_url(); ?>" class="btn btn-success btn-block mt-3">Kembali ke Home</a>
             <p>Belum memiliki akun? <a href="<?= base_url("auth/register"); ?>">Registrasi Sekarang</a></p>
           </div>
           <!-- /.col -->

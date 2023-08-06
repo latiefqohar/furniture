@@ -58,6 +58,8 @@
                                         $status='<span class="badge badge-info">Diproses</span>';
                                     }elseif ($row->status==3) {
                                         $status='<span class="badge badge-warning">Dikirim</span>';
+                                    } elseif ($row->status==4) {
+                                        $status='<span class="badge badge-success">Diterima</span>';
                                     }
                                     
                                     
