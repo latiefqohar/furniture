@@ -61,6 +61,8 @@
                                         $status='<span class="badge badge-info">Diproses</span>';
                                     }elseif ($row->status==3) {
                                         $status='<span class="badge badge-warning">Dikirim</span>';
+                                    }elseif ($row->status==4) {
+                                        $status='<span class="badge badge-success">Diterima</span>';
                                     }
                                     
                                     
@@ -141,7 +143,7 @@
 
 			<div class="info-box-content">
 				<span class="info-box-text">Sedang Diproses</span>
-				<span class="info-box-number"><?= $menunggu_proses; ?></span>
+				<span class="info-box-number"><?= $sedang_diproses; ?></span>
 			</div>
 			<!-- /.info-box-content -->
 		</div>
