@@ -22,7 +22,9 @@ class Status extends CI_Controller {
             }elseif($data['pesanan']['status']==2){
                 $data['status_pesanan']='<span class="badge badge-info">Sedang diproses</span>';
             }elseif($data['pesanan']['status']==3){
-                $data['status_pesanan']='<span class="badge badge-success">Dikirim</span>';
+                $data['status_pesanan']='<span class="badge badge-warning">Dikirim</span>';
+            }elseif($data['pesanan']['status']==4){
+                $data['status_pesanan']='<span class="badge badge-success">Diterima (selesai) </span>';
             }
 
             if ($data['pesanan']['status_bayar']==0) {
