@@ -110,7 +110,7 @@
 							 }else{
 								echo $invoice;
 							} ?>
-							<?php if ($transaksi['status'] == 3) { ?>
+							<?php if ($transaksi['status'] == 3 && $this->session->userdata("role")=="Customer") { ?>
 								<br><br>
 							 	<a href="<?= base_url('Checkout/terima/'.$transaksi['id']); ?>" class="btn btn-success">Konfirmasi pesanan diterima</a>
 							<?php } ?>
