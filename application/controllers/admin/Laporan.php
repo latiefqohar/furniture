@@ -23,9 +23,9 @@ class Laporan extends CI_Controller {
             $start = $this->input->post('date_start')." 00:00:00";
             $end = $this->input->post('date_end')." 23:59:59";
             
-            $data['transaksi'] = $this->db->query('select transaksi.waktu,menu.nama,sum(keranjang.jumlah) as jumlah,sum(menu.harga_beli*keranjang.jumlah) as harga_beli, sum(menu.harga*keranjang.jumlah) as harga_jual,transaksi.pembayaran,keranjang.diskon, sum((keranjang.jumlah*(menu.harga-menu.harga_beli)-keranjang.diskon)) as untung from keranjang join menu on keranjang.id_menu=menu.id join transaksi on keranjang.id_transaksi = transaksi.id where keranjang.status_bayar = 1 and transaksi.waktu > "'.$start.'" and transaksi.waktu < "'.$end.'" group by id_menu')->result();
+            $data['transaksi'] = $this->db->query('select transaksi.waktu,menu.nama,sum(keranjang.jumlah) as jumlah,sum(menu.harga_beli*keranjang.jumlah) as harga_beli, sum(menu.harga*keranjang.jumlah) as harga_jual,transaksi.pembayaran,keranjang.diskon, sum(keranjang.jumlah*(menu.harga-menu.harga_beli)) as untung from keranjang join menu on keranjang.id_menu=menu.id join transaksi on keranjang.id_transaksi = transaksi.id where keranjang.status_bayar = 1 and transaksi.waktu > "'.$start.'" and transaksi.waktu < "'.$end.'" group by id_menu')->result();
         }else{
-            $data['transaksi'] = $this->db->query('select transaksi.waktu,menu.nama,sum(keranjang.jumlah) as jumlah,sum(keranjang.jumlah*menu.harga_beli) as harga_beli, sum(keranjang.jumlah*menu.harga) as harga_jual,transaksi.pembayaran,keranjang.diskon, sum((keranjang.jumlah*(menu.harga-menu.harga_beli)-keranjang.diskon)) as untung from keranjang join menu on keranjang.id_menu=menu.id join transaksi on keranjang.id_transaksi = transaksi.id where keranjang.status_bayar = 1 group by id_menu
+            $data['transaksi'] = $this->db->query('select transaksi.waktu,menu.nama,sum(keranjang.jumlah) as jumlah,sum(keranjang.jumlah*menu.harga_beli) as harga_beli, sum(keranjang.jumlah*menu.harga) as harga_jual,transaksi.pembayaran,keranjang.diskon, sum(keranjang.jumlah*(menu.harga-menu.harga_beli)) as untung from keranjang join menu on keranjang.id_menu=menu.id join transaksi on keranjang.id_transaksi = transaksi.id where keranjang.status_bayar = 1 group by id_menu
             ')->result();
         }
        

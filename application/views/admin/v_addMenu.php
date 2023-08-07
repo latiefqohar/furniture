@@ -19,11 +19,11 @@
                     </div>
 					<div class="form-group">
 						<label for="harga">Harga Beli</label>
-						<input type="number" class="form-control" id="harga" name="harga" placeholder="Rp." required>
+						<input type="number" class="form-control" id="harga_beli" name="harga_beli" placeholder="Rp." required>
                     </div>
                     <div class="form-group">
 						<label for="harga">Harga Jual</label>
-						<input type="number" class="form-control" id="harga_beli" name="harga_beli" placeholder="Rp." required>
+						<input type="number" class="form-control" id="harga" name="harga" placeholder="Rp." required>
                     </div>
                     <div class="form-group">
                     <label for="exampleInputFile">Gambar</label>

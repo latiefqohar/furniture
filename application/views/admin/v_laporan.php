@@ -5,7 +5,7 @@
 		<div class="col-12">
 			<div class="card">
 				<div class="card-header">
-					<h3 class="card-title">Data Transaksi</h3>
+					<h3 class="card-title">Laporan Penjualan</h3>
 				</div>
 				<!-- /.card-header -->
 				<div class="card-body">
@@ -29,7 +29,6 @@
                                     <th>Jumlah</th>
                                     <th>Harga Beli</th>
                                     <th>Harga Jual</th>
-                                    <th>Diskon</th>
                                     <th>Laba</th>
                                     <th>Jenis Pembayaran</th>
                                    
@@ -49,7 +48,6 @@
                                     <td><?= $row->jumlah; ?></td>
                                     <td><?= $row->harga_beli; ?></td>
                                     <td><?= $row->harga_jual; ?></td>
-                                    <td><?= $row->diskon; ?></td>
                                     <td><?= $row->untung; ?></td>
                                     <td><?= $row->pembayaran; ?></td>
                                 </tr>
@@ -63,7 +61,6 @@
                                     <th colspan="3">Total</th>
                                     <th><?= $total_beli; ?></th>
                                     <th><?= $total_jual; ?></th>
-                                    <th><?= $total_diskon; ?></th>
                                     <th><?= $total_untung; ?></th>
                                     <th></th>
                                    
